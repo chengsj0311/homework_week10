@@ -10,7 +10,7 @@
     "font": "Georgia"
   },
   "data": {
-    "url": "../js/food_services_stats.csv"
+    "url": "js/food_services_stats.csv"
   },
   "layer": [
     {

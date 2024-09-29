@@ -24,7 +24,7 @@
     },
     {
       "data": {
-      "url": "../js/neighbour_country.json",
+      "url": "js/neighbour_country.json",
       "format": {"type": "topojson", "feature": "custom.geo"}
       },
       "mark": {
@@ -36,14 +36,14 @@
     },
     {
       "data": {
-        "url": "../js/malaysia.state.json",
+        "url": "js/malaysia.state.json",
         "format": {"type": "topojson", "feature": "malaysia.state"}
       },
       "transform": [
         {
           "lookup": "properties.name",
           "from": {
-            "data": {"url": "../js/data.csv"},
+            "data": {"url": "js/data.csv"},
             "key": "State",
             "fields": [
               "CAGR_Percentage",
