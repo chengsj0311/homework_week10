@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 530,
+  "height": 400,
+  "title": {
+    "text": ["Number of Establishments by Industry", "in Malaysia 2022"],
+    "anchor": "middle",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "font": "Georgia"
+  },
+  "data": {
+    "url": "../js/food_services_stats.csv"
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "selection": {
+        "ActivityFilter": {
+          "type": "multi",
+          "fields": [
+            "Activity"
+          ],
+          "bind": "legend"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Industry",
+          "type": "nominal",
+          "sort": "-y",
+          "axis": {
+            "labelAngle": -45,
+            "labelFontSize": 12,
+            "labelAlign": "right",
+            "labelBaseline": "middle",
+            "labelLimit": 70
+          },
+          "title": "Industry"
+        },
+        "y": {
+          "field": "Number_of_Establishments",
+          "type": "quantitative",
+          "title": "Number of Establishments",
+          "axis": {
+            "labelFontSize": 12,
+            "grid": false
+          }
+        },
+        "color": {
+          "field": "Activity",
+          "type": "nominal",
+          "legend": {
+            "title": "Activity"
+          },
+          "scale": {
+            "domain": [
+              "Food Service",
+              "Event Catering Service",
+              "Beverage Service"
+            ],
+            "range": [
+              "#669bbc",
+              "#e9c46a",
+              "#e07a5f"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "selection": "ActivityFilter",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "Industry",
+            "type": "nominal"
+          },
+          {
+            "field": "Number of Establishments",
+            "type": "quantitative"
+          },
+          {
+            "field": "Activity",
+            "type": "nominal"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontStyle": "normal",
+        "font": "Arial",
+        "align": "center",
+        "baseline": "middle",
+        "dx": -80,
+        "dy": -180,
+        "fontSize": 13,
+        "color": "black",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "text": {
+          "value": "Food Stalls or hawkers are\nthe most common type of\nfood service establishments\nin Malaysia 2022"
+        }
+      }
+    }
+  ]
+}
