@@ -79,8 +79,9 @@
             "type": "nominal"
           },
           {
-            "field": "Number of Establishments",
-            "type": "quantitative"
+            "field": "Number_of_Establishments",
+            "type": "quantitative",
+            "title": "Number of Establishments"
           },
           {
             "field": "Activity",
